@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, {useCallback, useRef} from 'react';
 import {
   ScrollView,
   View,
@@ -7,10 +7,10 @@ import {
   Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-import { Form } from '@unform/mobile';
-import { FormHandles } from '@unform/core';
+import {Form} from '@unform/mobile';
+import {FormHandles} from '@unform/core';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -29,17 +29,19 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 
-  const handleSignIn = useCallback((data: object) => { console.log(data) }, []);
+  const handleSignIn = useCallback((data: object) => {
+    console.log(data);
+  }, []);
 
   return (
     <>
       <KeyboardAvoidingView
-        style={{ flex: 1 }}
+        style={{flex: 1}}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled>
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
+          contentContainerStyle={{flex: 1}}>
           <Container>
             <Image source={logoImg} />
             <View>
@@ -55,10 +57,10 @@ const SignIn: React.FC = () => {
                   formRef.current?.submitForm();
                 }}>
                 Entrar
-            </Button>
+              </Button>
             </Form>
 
-            <ForgotPassword onPress={() => { }}>
+            <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>
